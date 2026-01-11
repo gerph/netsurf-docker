@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:24.04
 
 #ARG rpcemu_version=0.9.3
 
