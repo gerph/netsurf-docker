@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:hirsute-20220113
 
 #ARG rpcemu_version=0.9.3
 
