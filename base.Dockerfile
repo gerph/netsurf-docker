@@ -1,9 +1,9 @@
-FROM ubuntu:21.04
+FROM ubuntu:24.04
 
 #ARG rpcemu_version=0.9.3
 
 # Add user we're going to run under (without a password)
-RUN adduser netsurf && \
+RUN useradd netsurf && \
     mkdir -p /home/netsurf && \
     chown -R netsurf:netsurf /home/netsurf
 

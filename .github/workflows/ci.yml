@@ -1,0 +1,22 @@
+---
+# Check that the NetSurf docker image still builds.
+
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build the NetSurf image
+        run: make base
+
+      - name: Check that NetSurf is installed in the image
+        run: docker run --rm --entrypoint sh gerph/netsurf:latest -c 'command -v netsurf-gtk && command -v vncserver'
